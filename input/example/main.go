@@ -14,6 +14,6 @@ func main() {
 	// With options
 	opts := wtopts.DefaultOpts()
 	opts.AccentColor = 4
-	userInput, _ = input.Input("What's your name?", "Type your name")
+	userInput, _ = input.Input("What's your name?", "Type your name", opts)
 	fmt.Println(userInput)
 }
