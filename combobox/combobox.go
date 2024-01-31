@@ -62,6 +62,9 @@ func Draw(selected *int, options *[]string, filter *string, opts wtopts.Opts) []
 	var strs []string
 
 	var filteredOptions []string = filterStringsByPrefix(options, *filter, opts.CaseSensitive)
+	if len(filteredOptions) != 0 && *selected > len(filteredOptions)-1 {
+		*selected = len(filteredOptions) - 1
+	}
 
 	start, end, moreBefore, moreAfter := utils.GetRange(len(filteredOptions), *selected, opts.MaxRows-1)
 
