@@ -9,6 +9,8 @@ const (
 	CR        = 13
 	Escape    = 27
 	Backspace = 127
+	CtrlC     = 3
+	CtrlD     = 4
 )
 
 const (
