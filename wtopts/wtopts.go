@@ -69,16 +69,16 @@ func DefaultOpts() Opts {
 		Negative:       "No",
 
 		DefaultNumber: 0,
-		Decimals:      1,
-		Increment:     0.1,
+		Decimals:      0,
+		Increment:     1,
 		Maximum:       100,
-		Minimum:       -11,
+		Minimum:       -100,
 
 		DefaultRed:     0,
 		DefaultGreen:   0,
 		DefaultBlue:    0,
 		DefaultOpacity: 255,
 
-		CaseSensitive: true,
+		CaseSensitive: false,
 	}
 }
