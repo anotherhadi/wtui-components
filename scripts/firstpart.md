@@ -4,6 +4,8 @@
 
 # What's this UI? - Components
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/anotherhadi/wtui-components)](https://goreportcard.com/report/github.com/anotherhadi/wtui-components)
+
 The `wtui-components` package is a Go library that offers a set of components for developing Text-based User Interfaces (TUI) with [wtui](https://github.com/anotherhadi/wtui) or in standalone mode.
 It includes features like input fields, selections, and other essential components for building interactive text-based applications.
 Easy to set up, use, customize and modify. Some components are inspired by [charmbracelet/bubbles](https://github.com/charmbracelet/bubbles).
