@@ -4,7 +4,11 @@
 
 # What's this UI? - Components
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/anotherhadi/wtui-components)](https://goreportcard.com/report/github.com/anotherhadi/wtui-components)
+<p>
+    <a href="https://github.com/anotherhadi/wtui-components/releases"><img src="https://img.shields.io/github/release/anotherhadi/wtui-components.svg" alt="Latest Release"></a>
+    <a href="https://pkg.go.dev/github.com/anotherhadi/wtui-components?tab=doc"><img src="https://godoc.org/github.com/golang/gddo?status.svg" alt="GoDoc"></a>
+    <a href="https://goreportcard.com/report/github.com/anotherhadi/wtui-components"><img src="https://goreportcard.com/badge/anotherhadi/wtui-components" alt="GoReportCard"></a>
+</p>
 
 The `wtui-components` package is a Go library that offers a set of components for developing Text-based User Interfaces (TUI) with [wtui](https://github.com/anotherhadi/wtui) or in standalone mode.
 It includes features like input fields, selections, and other essential components for building interactive text-based applications.
