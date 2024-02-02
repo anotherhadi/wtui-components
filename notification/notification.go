@@ -42,7 +42,7 @@ func Draw(message, status string, opts wtopts.Opts) []string {
 	paraOpts.MaxCols = opts.MaxCols - 4
 	messageParagraph := formatMessage(message, paraOpts)
 
-	strs = append(strs, ansi.Fg256(opts.SecondaryColor)+boxStyle.TopLeft+strings.Repeat(boxStyle.Horizontaly, opts.MaxCols)+boxStyle.TopRight+ansi.Reset)
+	strs = append(strs, ansi.Fg256(opts.SecondaryColor)+boxStyle.TopLeft+strings.Repeat(boxStyle.Horizontally, opts.MaxCols)+boxStyle.TopRight+ansi.Reset)
 	for i := 0; i < len(messageParagraph); i++ {
 		prefix := "   "
 		if i == 0 {
@@ -60,10 +60,10 @@ func Draw(message, status string, opts wtopts.Opts) []string {
 				prefix += asciimoji.Envelope + " "
 			}
 		}
-		strs = append(strs, ansi.Fg256(opts.SecondaryColor)+boxStyle.Verticaly+prefix+ansi.Fg256(opts.TextColor)+messageParagraph[i]+strings.Repeat(" ", opts.MaxCols-len(messageParagraph[i])-3)+ansi.Fg256(opts.SecondaryColor)+boxStyle.Verticaly+ansi.Reset)
+		strs = append(strs, ansi.Fg256(opts.SecondaryColor)+boxStyle.Vertically+prefix+ansi.Fg256(opts.TextColor)+messageParagraph[i]+strings.Repeat(" ", opts.MaxCols-len(messageParagraph[i])-3)+ansi.Fg256(opts.SecondaryColor)+boxStyle.Vertically+ansi.Reset)
 	}
 
-	strs = append(strs, ansi.Fg256(opts.SecondaryColor)+boxStyle.BottomLeft+strings.Repeat(boxStyle.Horizontaly, opts.MaxCols)+boxStyle.BottomRight+ansi.Reset)
+	strs = append(strs, ansi.Fg256(opts.SecondaryColor)+boxStyle.BottomLeft+strings.Repeat(boxStyle.Horizontally, opts.MaxCols)+boxStyle.BottomRight+ansi.Reset)
 
 	return strs
 }

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
+	"unicode"
 
 	"github.com/anotherhadi/wtui-components/ansi"
 	"github.com/anotherhadi/wtui-components/asciimoji"
@@ -27,20 +28,20 @@ func Draw(rgb *[3]uint8, selected *int, opts wtopts.Opts) []string {
 		strs[0] += asciimoji.Up + "   " + ansi.Reset
 	}
 
-	strs[1] = ansi.Fg256(opts.SecondaryColor) + boxStyle.TopLeft + strings.Repeat(strings.Repeat(boxStyle.Horizontaly, 3)+boxStyle.ToBottom, 3) + strings.Repeat(boxStyle.Horizontaly, 3) + boxStyle.TopRight + ansi.Reset
+	strs[1] = ansi.Fg256(opts.SecondaryColor) + boxStyle.TopLeft + strings.Repeat(strings.Repeat(boxStyle.Horizontally, 3)+boxStyle.ToBottom, 3) + strings.Repeat(boxStyle.Horizontally, 3) + boxStyle.TopRight + ansi.Reset
 
-	strs[2] = ansi.Fg256(opts.SecondaryColor) + boxStyle.Verticaly
+	strs[2] = ansi.Fg256(opts.SecondaryColor) + boxStyle.Vertically
 	for i := 0; i < 3; i++ {
 		if *selected == i {
 			strs[2] += ansi.Fg256(opts.AccentColor)
 		} else {
 			strs[2] += ansi.Fg256(opts.SecondaryColor)
 		}
-		strs[2] += fmt.Sprintf("%3d", rgb[i]) + ansi.Fg256(opts.SecondaryColor) + boxStyle.Verticaly
+		strs[2] += fmt.Sprintf("%3d", rgb[i]) + ansi.Fg256(opts.SecondaryColor) + boxStyle.Vertically
 	}
-	strs[2] += ansi.BgRgb(rgb[0], rgb[1], rgb[2]) + "   " + ansi.Reset + ansi.Fg256(opts.SecondaryColor) + boxStyle.Verticaly
+	strs[2] += ansi.BgRgb(rgb[0], rgb[1], rgb[2]) + "   " + ansi.Reset + ansi.Fg256(opts.SecondaryColor) + boxStyle.Vertically
 
-	strs[3] = ansi.Fg256(opts.SecondaryColor) + boxStyle.BottomLeft + strings.Repeat(strings.Repeat(boxStyle.Horizontaly, 3)+boxStyle.ToTop, 3) + strings.Repeat(boxStyle.Horizontaly, 3) + boxStyle.BottomRight + ansi.Reset
+	strs[3] = ansi.Fg256(opts.SecondaryColor) + boxStyle.BottomLeft + strings.Repeat(strings.Repeat(boxStyle.Horizontally, 3)+boxStyle.ToTop, 3) + strings.Repeat(boxStyle.Horizontally, 3) + boxStyle.BottomRight + ansi.Reset
 
 	strs[4] = "  "
 	for i := 0; i < 3; i++ {
@@ -86,7 +87,7 @@ func HandleKey(selected *int, rgb *[3]uint8, key string, opts wtopts.Opts) error
 				*selected = 2
 			}
 		}
-	} else if key == "0" || key == "1" || key == "2" || key == "3" || key == "4" || key == "5" || key == "6" || key == "7" || key == "8" || key == "9" { // Manually input a number
+	} else if unicode.IsDigit(rune(key[0])) {
 		n, _ := strconv.ParseInt(key, 10, 64)
 		if int(rgb[*selected])*10+int(n) <= 255 {
 			rgb[*selected] = uint8(int(rgb[*selected])*10 + int(n))

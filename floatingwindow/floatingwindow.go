@@ -15,12 +15,12 @@ func Draw(width, height int, title string, opts wtopts.Opts) []string {
 
 	boxStyle := utils.GetBoxStyle(opts.Style)
 	var strs []string
-	strs = append(strs, ansi.Fg256(opts.SecondaryColor)+boxStyle.TopLeft+boxStyle.Horizontaly+title+strings.Repeat(boxStyle.Horizontaly, width-1-len(title))+boxStyle.TopRight+ansi.Reset)
+	strs = append(strs, ansi.Fg256(opts.SecondaryColor)+boxStyle.TopLeft+boxStyle.Horizontally+title+strings.Repeat(boxStyle.Horizontally, width-1-len(title))+boxStyle.TopRight+ansi.Reset)
 	for i := 0; i < height; i++ {
-		strs = append(strs, ansi.Fg256(opts.SecondaryColor)+boxStyle.Verticaly+strings.Repeat(" ", width)+boxStyle.Verticaly+ansi.Reset)
+		strs = append(strs, ansi.Fg256(opts.SecondaryColor)+boxStyle.Vertically+strings.Repeat(" ", width)+boxStyle.Vertically+ansi.Reset)
 	}
 
-	strs = append(strs, ansi.Fg256(opts.SecondaryColor)+boxStyle.BottomLeft+strings.Repeat(boxStyle.Horizontaly, width)+boxStyle.BottomRight+ansi.Reset)
+	strs = append(strs, ansi.Fg256(opts.SecondaryColor)+boxStyle.BottomLeft+strings.Repeat(boxStyle.Horizontally, width)+boxStyle.BottomRight+ansi.Reset)
 	return strs
 }
 

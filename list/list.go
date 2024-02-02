@@ -22,7 +22,7 @@ func drawOption(opts wtopts.Opts, option [2]string, selected bool) [2]string {
 	} else {
 		str.WriteString(ansi.Fg256(opts.SecondaryColor))
 	}
-	str.WriteString(boxStyle.Verticaly + " ")
+	str.WriteString(boxStyle.Vertically + " ")
 	if len(option[0]) > opts.MaxCols-2 {
 		option[0] = option[0][:opts.MaxCols-(2+3)] + "..."
 	}
@@ -34,7 +34,7 @@ func drawOption(opts wtopts.Opts, option [2]string, selected bool) [2]string {
 	} else {
 		str.WriteString(ansi.Fg256(opts.SecondaryColor))
 	}
-	str.WriteString(boxStyle.Verticaly + " ")
+	str.WriteString(boxStyle.Vertically + " ")
 	if len(option[1]) > opts.MaxCols-2 {
 		option[1] = option[1][:opts.MaxCols-(2+3)] + "..."
 	}

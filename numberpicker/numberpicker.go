@@ -6,6 +6,7 @@ import (
 	"math"
 	"strconv"
 	"strings"
+	"unicode"
 
 	"github.com/anotherhadi/wtui-components/ansi"
 	"github.com/anotherhadi/wtui-components/asciimoji"
@@ -43,14 +44,14 @@ func Draw(number *string, opts wtopts.Opts) []string {
 		maxLength++
 	}
 
-	strs[0] = ansi.Fg256(opts.SecondaryColor) + "  " + boxStyle.TopLeft + strings.Repeat(boxStyle.Horizontaly, maxLength+2) + boxStyle.TopRight + "  " + ansi.Reset
+	strs[0] = ansi.Fg256(opts.SecondaryColor) + "  " + boxStyle.TopLeft + strings.Repeat(boxStyle.Horizontally, maxLength+2) + boxStyle.TopRight + "  " + ansi.Reset
 
-	strs[1] = ansi.Fg256(opts.SecondaryColor) + asciimoji.Left + " " + boxStyle.Verticaly
+	strs[1] = ansi.Fg256(opts.SecondaryColor) + asciimoji.Left + " " + boxStyle.Vertically
 	strs[1] += " " + strings.Repeat(" ", maxLength-len(*number))
 	strs[1] += ansi.Fg256(opts.AccentColor) + *number
-	strs[1] += ansi.Fg256(opts.SecondaryColor) + " " + boxStyle.Verticaly + " " + asciimoji.Right + ansi.Reset
+	strs[1] += ansi.Fg256(opts.SecondaryColor) + " " + boxStyle.Vertically + " " + asciimoji.Right + ansi.Reset
 
-	strs[2] = ansi.Fg256(opts.SecondaryColor) + "  " + boxStyle.BottomLeft + strings.Repeat(boxStyle.Horizontaly, maxLength+2) + boxStyle.BottomRight + "  " + ansi.Reset
+	strs[2] = ansi.Fg256(opts.SecondaryColor) + "  " + boxStyle.BottomLeft + strings.Repeat(boxStyle.Horizontally, maxLength+2) + boxStyle.BottomRight + "  " + ansi.Reset
 
 	return strs[:]
 }
@@ -69,7 +70,7 @@ func HandleKey(number *string, key string, opts wtopts.Opts) error {
 		if n <= opts.Maximum {
 			*number = fmt.Sprint(roundTo(n, opts.Decimals))
 		}
-	} else if key == "0" || key == "1" || key == "2" || key == "3" || key == "4" || key == "5" || key == "6" || key == "7" || key == "8" || key == "9" { // Manually input a number
+	} else if unicode.IsDigit(rune(key[0])) {
 		n := stringToFloat(*number + key)
 		if n >= opts.Minimum && n <= opts.Maximum && countDigitsAfterDecimal(n) <= opts.Decimals {
 			if *number == "0" {
