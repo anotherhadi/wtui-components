@@ -4,4 +4,4 @@
 
 The `asciimoji` package is a collection of emojis made from ASCII characters. From [asciimoji.com](https://asciimoji.com)
 
-You can found an example with and without options [here](https://github.com/anotherhadi/wtui-components/blob/main/asciimoji/example/main.go)
+You can found an example [here](https://github.com/anotherhadi/wtui-components/blob/main/asciimoji/example/main.go)

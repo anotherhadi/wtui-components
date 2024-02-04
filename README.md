@@ -59,10 +59,10 @@ You can refer to the examples folder for each component to learn more about the 
 
 ![ANSI Example](https://file.anotherhadi.com/wtui-components/ansi.gif)
 
-The `ansi` component provides a simple and user-friendly way to add color and formatting to terminal output in Go applications.
+The `ansi` package provides a simple and user-friendly way to add color and formatting to terminal output in Go applications.
 Enhance your command-line interfaces with vibrant text, background colors, and text styles, making your output more readable and visually appealing.
 
-You can found an example with and without options [here](https://github.com/anotherhadi/wtui-components/blob/main/ansi/example/main.go)
+You can found an example [here](https://github.com/anotherhadi/wtui-components/blob/main/ansi/example/main.go)
 
 ### Asciimoji
 
@@ -70,7 +70,7 @@ You can found an example with and without options [here](https://github.com/anot
 
 The `asciimoji` package is a collection of emojis made from ASCII characters. From [asciimoji.com](https://asciimoji.com)
 
-You can found an example with and without options [here](https://github.com/anotherhadi/wtui-components/blob/main/asciimoji/example/main.go)
+You can found an example [here](https://github.com/anotherhadi/wtui-components/blob/main/asciimoji/example/main.go)
 
 ### Asciitext
 
@@ -136,7 +136,7 @@ You can found an example [here](https://github.com/anotherhadi/wtui-components/b
 
 The `getsize` package allows you to obtain the size in columns and rows of the terminal.
 
-You can found an example with and without options [here](https://github.com/anotherhadi/wtui-components/blob/main/getsize/example/main.go)
+You can found an example [here](https://github.com/anotherhadi/wtui-components/blob/main/getsize/example/main.go)
 
 ### Image
 
