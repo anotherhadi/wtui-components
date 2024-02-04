@@ -41,6 +41,7 @@ Easy to set up, use, customize and modify. Some components are inspired by [char
     - [Selection](#selection)
     - [Shortcuts](#shortcuts)
     - [Spacer](#spacer)
+    - [Table](#table)
   - [Options](#options)
   - [License](#license)
 
@@ -232,6 +233,14 @@ You can found an example [here](https://github.com/anotherhadi/wtui-components/b
 The `spacer` component allows you to print space between components
 
 You can found an example [here](https://github.com/anotherhadi/wtui-components/blob/main/spacer/example/main.go)
+
+### Table
+
+![Table Example](https://file.anotherhadi.com/wtui-components/table.gif)
+
+The `table` component is ideal for creating tables with columns and other features for organized data representation.
+
+You can found an example with and without options [here](https://github.com/anotherhadi/wtui-components/blob/main/table/example/main.go)
 
 ## Options
 

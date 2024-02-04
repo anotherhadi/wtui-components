@@ -40,6 +40,12 @@ type Opts struct {
 
 	// Combobox
 	CaseSensitive bool
+
+	// Table
+	DefaultColLength    int
+	ColumnMaxLength     []int
+	Spacer              bool
+	FirstRowAccentColor bool
 }
 
 func GetOpts(customOpts ...Opts) Opts {
@@ -80,5 +86,10 @@ func DefaultOpts() Opts {
 		DefaultOpacity: 255,
 
 		CaseSensitive: false,
+
+		DefaultColLength:    20,
+		ColumnMaxLength:     []int{},
+		Spacer:              true,
+		FirstRowAccentColor: true,
 	}
 }
