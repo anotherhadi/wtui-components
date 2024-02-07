@@ -3,6 +3,7 @@ package combobox
 import (
 	"errors"
 	"fmt"
+	"slices"
 	"strings"
 
 	"github.com/anotherhadi/wtui-components/ansi"
@@ -153,12 +154,12 @@ func Combobox(options []string, customOpts ...wtopts.Opts) (result int, err erro
 			if len(filteredOptions) == 0 {
 				return -1, errors.New("Empty selection")
 			}
-			for index, str := range options {
-				if str == filteredOptions[selected] {
-					return index, nil
-				}
+			result = slices.Index(options, filteredOptions[selected])
+			if result == -1 {
+				return -1, errors.New("Unable to find in list")
+			} else {
+				return result, nil
 			}
-			return -1, errors.New("Unable to find in list")
 		}
 		err = HandleKey(&selected, &options, &filter, key, opts)
 		if err != nil {
