@@ -19,7 +19,7 @@ func Draw(shortcuts [][2]string, opts wtopts.Opts) string {
 	}
 
 	str = ansi.Fg256(opts.SecondaryColor)
-	str += strings.Join(strs[:], " ● ")
+	str += strings.Join(strs[:], " • ")
 	str += ansi.Reset
 
 	return str
